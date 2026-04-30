@@ -2,13 +2,13 @@
 """Main entry point for the EdPy Robot Simulator.
 
 Usage:
-    python -m simulator.main
+    python -m simulator
 
 Or:
-    python simulator/main.py
+    python -m simulator.main
 """
 
-from simulator.gui import main
+from .gui import main
 
 if __name__ == "__main__":
     main()

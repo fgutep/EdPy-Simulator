@@ -15,6 +15,7 @@ The original EdPy project is released under the **GNU General Public License v2.
 
 This simulator was created to provide a visual testing environment for EdPy code, enabling faster iteration when developing robot programs.
 
+!()[img/sim_interface.png]
 ---
 
 ## Features
@@ -43,6 +44,12 @@ Or from within the simulator directory:
 ```bash
 python main.py
 ```
+
+## ⚠️ IMPORTANT - READ THIS BEFORE TESTING
+
+**Please read the [Important Implementation Notes](#important-implementation-notes) section below before running your programs!** There are critical unsupported commands that will cause errors if not handled properly.
+
+---
 
 ### Creating a Maze and Testing
 
@@ -221,6 +228,25 @@ if Ed.ReadObstacleDetection() == Ed.OBSTACLE_AHEAD:
     pass
 ```
 
+### Unsupported Commands (MUST COMMENT OUT)
+
+**⚠️ WARNING**: The following commands are **NOT SUPPORTED** by the simulator. They are only used for programming on the EdPyApp web editor and **MUST BE COMMENTED OUT** when testing in this simulator:
+
+```python
+# ❌ DO NOT USE - Comment these out:
+# import Ed
+# Ed.EdisonVersion = Ed.V3
+```
+
+**Why?** 
+- `import Ed` is implicit in the simulator - Ed is always available
+- `Ed.EdisonVersion = Ed.V3` is web-editor specific and not supported
+
+**What to do:**
+1. Comment out these lines before running code in the simulator
+2. Keep them commented when testing locally
+3. Uncomment them only when uploading to the actual Edison robot via the web editor
+
 ### Spin Directions
 
 Spin directions properly rotate the robot in place:
@@ -269,6 +295,45 @@ The simulator is organized into modules:
 - **EdPy Documentation**: https://github.com/Bdanilko/EdPy/tree/master/doc
 - **EdPyApp Online Editor**: https://www.edpyapp.com/v3/
 - **Original EdPy Project**: https://github.com/Bdanilko/EdPy
+
+---
+
+## Contributing
+
+We welcome contributions! Here's how to submit a pull request:
+
+### Getting Started
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Make your changes
+4. Test thoroughly with the simulator: `python -m simulator`
+
+### Submitting a Pull Request
+
+1. Commit your changes with clear, descriptive messages
+2. Push to your fork
+3. Open a Pull Request with:
+   - Clear description of what the PR does
+   - Why this change is needed
+   - Any relevant testing or examples
+   - Reference to any related issues
+
+### PR Guidelines
+
+- Keep PRs focused on a single feature or fix
+- Include tests if adding new functionality
+- Update the README if adding new commands or features
+- Follow the existing code style
+- Ensure the simulator runs without errors after your changes
+
+### Areas for Contribution
+
+- Bug fixes and improvements
+- New EdPy command implementations
+- UI/UX improvements
+- Documentation improvements
+- Test coverage
 
 ---
 
