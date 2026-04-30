@@ -15,8 +15,7 @@ The original EdPy project is released under the **GNU General Public License v2.
 
 This simulator was created to provide a visual testing environment for EdPy code, enabling faster iteration when developing robot programs.
 
-!()[[img/sim_interface.png](https://github.com/fgutep/EdPy-Simulator/blob/main/img/sim_interface.png?raw=true)]
----
+![](img/sim_interface.png)---
 
 ## Features
 
