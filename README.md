@@ -205,6 +205,26 @@ Enable "Maze Mode (Grid Snap)" to:
 
 ## Important Implementation Notes
 
+### Unsupported Commands (MUST COMMENT OUT)
+
+**⚠️ WARNING**: The following commands are **NOT SUPPORTED** by the simulator. They are only used for programming on the EdPyApp web editor and **MUST BE COMMENTED OUT** when testing in this simulator:
+
+```python
+# ❌ DO NOT USE - Comment these out:
+# import Ed
+# Ed.EdisonVersion = Ed.V3
+```
+
+**Why?** 
+- `import Ed` is implicit in the simulator - Ed is always available
+- `Ed.EdisonVersion = Ed.V3` is web-editor specific and not supported
+
+**What to do:**
+1. Comment out these lines before running code in the simulator
+2. Keep them commented when testing locally
+3. Uncomment them only when uploading to the actual Edison robot via the web editor
+
+
 ### Clear-on-Read Behavior
 
 The simulator accurately models the real Edison robot's "clear-on-read" sensor behavior:
@@ -228,25 +248,6 @@ if Ed.ReadObstacleDetection() == Ed.OBSTACLE_AHEAD:
     # Handle obstacle
     pass
 ```
-
-### Unsupported Commands (MUST COMMENT OUT)
-
-**⚠️ WARNING**: The following commands are **NOT SUPPORTED** by the simulator. They are only used for programming on the EdPyApp web editor and **MUST BE COMMENTED OUT** when testing in this simulator:
-
-```python
-# ❌ DO NOT USE - Comment these out:
-# import Ed
-# Ed.EdisonVersion = Ed.V3
-```
-
-**Why?** 
-- `import Ed` is implicit in the simulator - Ed is always available
-- `Ed.EdisonVersion = Ed.V3` is web-editor specific and not supported
-
-**What to do:**
-1. Comment out these lines before running code in the simulator
-2. Keep them commented when testing locally
-3. Uncomment them only when uploading to the actual Edison robot via the web editor
 
 ### Spin Directions
 
