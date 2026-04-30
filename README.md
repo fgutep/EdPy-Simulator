@@ -15,7 +15,13 @@ The original EdPy project is released under the **GNU General Public License v2.
 
 This simulator was created to provide a visual testing environment for EdPy code, enabling faster iteration when developing robot programs.
 
-![](img/sim_interface.png)---
+![](img/sim_interface.png)
+
+## ⚠️ IMPORTANT - READ THIS BEFORE TESTING
+
+**Please read the [Important Implementation Notes](#important-implementation-notes) section below before running your programs!** There are critical unsupported commands that will cause errors if not handled properly.
+
+---
 
 ## Features
 
@@ -44,11 +50,7 @@ Or from within the simulator directory:
 python main.py
 ```
 
-## ⚠️ IMPORTANT - READ THIS BEFORE TESTING
 
-**Please read the [Important Implementation Notes](#important-implementation-notes) section below before running your programs!** There are critical unsupported commands that will cause errors if not handled properly.
-
----
 
 ### Creating a Maze and Testing
 
